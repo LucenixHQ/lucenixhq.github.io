@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('section[id]');
     const backToTopButton = document.getElementById('backToTop');
     const navbar = document.querySelector('.navbar');
+    const revealItems = document.querySelectorAll('.reveal-up');
 
     if (navbarToggle) {
         navbarToggle.addEventListener('click', function () {
@@ -49,6 +50,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 link.classList.add('active');
             }
         });
+    }
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.18 });
+
+        revealItems.forEach(item => observer.observe(item));
+    } else {
+        revealItems.forEach(item => item.classList.add('is-visible'));
     }
 
     window.addEventListener('scroll', updateScrollUI);
