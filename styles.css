@@ -1,14 +1,15 @@
 :root {
-    --bg: #090909;
-    --bg-soft: #111111;
+    --bg: #07090f;
+    --bg-soft: #0d1220;
     --panel: rgba(255, 255, 255, 0.035);
     --panel-strong: rgba(255, 255, 255, 0.05);
     --border: rgba(255, 255, 255, 0.09);
     --border-soft: rgba(255, 255, 255, 0.06);
-    --text: #f4f0e8;
-    --muted: #b5aca1;
-    --gold: #d8b676;
-    --gold-soft: rgba(216, 182, 118, 0.18);
+    --text: #f3f7ff;
+    --muted: #a5b2c9;
+    --brand-blue: #66b8ff;
+    --brand-blue-strong: #4b96ff;
+    --brand-blue-soft: rgba(102, 184, 255, 0.2);
     --shadow: 0 28px 70px rgba(0, 0, 0, 0.4);
     --radius: 28px;
     --radius-sm: 20px;
@@ -28,9 +29,9 @@ html {
 body {
     font-family: 'Inter', sans-serif;
     background:
-        radial-gradient(circle at 15% 15%, rgba(216, 182, 118, 0.08), transparent 0, transparent 25%),
+        radial-gradient(circle at 15% 15%, rgba(102, 184, 255, 0.1), transparent 0, transparent 25%),
         radial-gradient(circle at 82% 8%, rgba(255, 255, 255, 0.04), transparent 0, transparent 18%),
-        linear-gradient(180deg, #070707 0%, #0b0b0b 45%, #080808 100%);
+        linear-gradient(180deg, #060912 0%, #0a0f1b 45%, #070a12 100%);
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
@@ -58,7 +59,7 @@ img {
 .ambient-glow-1 {
     width: 280px;
     height: 280px;
-    background: rgba(216, 182, 118, 0.12);
+    background: rgba(102, 184, 255, 0.14);
     top: 120px;
     left: -60px;
 }
@@ -96,7 +97,7 @@ section {
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--brand-blue);
 }
 
 .section-header {
@@ -137,7 +138,7 @@ section {
     width: 100%;
     z-index: 1000;
     padding: 1rem 0;
-    background: rgba(7, 7, 7, 0.76);
+    background: rgba(7, 9, 15, 0.76);
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(14px);
     transition: padding var(--transition), background var(--transition);
@@ -145,7 +146,7 @@ section {
 
 .navbar.scrolled {
     padding: 0.8rem 0;
-    background: rgba(7, 7, 7, 0.9);
+    background: rgba(7, 9, 15, 0.9);
 }
 
 .navbar .container {
@@ -187,7 +188,7 @@ section {
 
 .nav-link {
     position: relative;
-    color: rgba(244, 240, 232, 0.8);
+    color: rgba(243, 247, 255, 0.8);
     font-size: 0.95rem;
 }
 
@@ -198,7 +199,7 @@ section {
     bottom: -0.35rem;
     width: 0;
     height: 1px;
-    background: var(--gold);
+    background: var(--brand-blue);
     transition: width var(--transition);
 }
 
@@ -274,14 +275,14 @@ section {
     border-radius: 999px;
     border: 1px solid var(--border-soft);
     background: rgba(255, 255, 255, 0.02);
-    color: #d6cdc2;
+    color: #d3def3;
     font-size: 0.86rem;
 }
 
 .hero-frame {
     padding: 1px;
     border-radius: var(--radius);
-    background: linear-gradient(180deg, rgba(216, 182, 118, 0.5), rgba(255, 255, 255, 0.06));
+    background: linear-gradient(180deg, rgba(102, 184, 255, 0.55), rgba(255, 255, 255, 0.06));
     box-shadow: var(--shadow);
 }
 
@@ -312,7 +313,7 @@ section {
     font-size: 0.74rem;
     text-transform: uppercase;
     letter-spacing: 0.16em;
-    color: var(--gold);
+    color: var(--brand-blue);
 }
 
 .hero-frame-inner h2 {
@@ -332,7 +333,7 @@ section {
 .frame-divider {
     width: 100%;
     height: 1px;
-    background: linear-gradient(90deg, rgba(216, 182, 118, 0.35), rgba(255, 255, 255, 0.04));
+    background: linear-gradient(90deg, rgba(102, 184, 255, 0.35), rgba(255, 255, 255, 0.04));
     margin: 1.7rem 0 1.2rem;
 }
 
@@ -487,8 +488,8 @@ section {
 
 .social-icon:hover {
     transform: translateY(-2px);
-    border-color: rgba(216, 182, 118, 0.28);
-    background: rgba(216, 182, 118, 0.08);
+    border-color: rgba(102, 184, 255, 0.3);
+    background: rgba(102, 184, 255, 0.1);
 }
 
 .btn {
@@ -506,9 +507,9 @@ section {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #d9b87d, #b28b52);
-    color: #0b0b0b;
-    box-shadow: 0 14px 34px rgba(216, 182, 118, 0.18);
+    background: linear-gradient(135deg, var(--brand-blue), var(--brand-blue-strong));
+    color: #06111f;
+    box-shadow: 0 14px 34px rgba(75, 150, 255, 0.22);
 }
 
 .btn-secondary {
@@ -543,8 +544,8 @@ section {
     height: 48px;
     border: 0;
     border-radius: 50%;
-    background: linear-gradient(135deg, #d9b87d, #b28b52);
-    color: #0b0b0b;
+    background: linear-gradient(135deg, var(--brand-blue), var(--brand-blue-strong));
+    color: #06111f;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -602,7 +603,7 @@ section {
         display: none;
         padding: 1rem;
         border-radius: 18px;
-        background: rgba(8, 8, 8, 0.96);
+        background: rgba(8, 10, 16, 0.96);
         border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
